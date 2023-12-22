@@ -1,14 +1,13 @@
-import { ReactNode } from 'react'
-import Image from '@/components/Image'
-import Bleed from 'pliny/ui/Bleed'
-import { CoreContent } from 'pliny/utils/contentlayer'
-import type { Blog } from 'contentlayer/generated'
 import Comments from '@/components/Comments'
+import Image from '@/components/Image'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
-import SectionContainer from '@/components/SectionContainer'
-import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import siteMetadata from '@/data/siteMetadata'
+import type { Blog } from 'contentlayer/generated'
+import Bleed from 'pliny/ui/Bleed'
+import { CoreContent } from 'pliny/utils/contentlayer'
+import { ReactNode } from 'react'
 
 interface LayoutProps {
   content: CoreContent<Blog>
@@ -23,7 +22,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
     images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/picsum/800/400'
 
   return (
-    <SectionContainer>
+    <main>
       <ScrollTopAndComment />
       <article>
         <div>
@@ -73,6 +72,6 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
           </footer>
         </div>
       </article>
-    </SectionContainer>
+    </main>
   )
 }
